@@ -33,20 +33,20 @@ export const Header: React.FC = () => (
     color="white"
     bg="#02395D"
   >
-    <HStack spacing={200}>
+    <HStack spacing={50}>
 
       
       <a href="https://soulagain.crypto-elites.club/"
       rel='noopener' target='_blank'>
 
-        <img src="logo.png"/>
+        <img src="logo.png" className="full-size-img"/>
         
       </a>
       <br />
       <a href="https://mint.soulagain.crypto-elites.club/"
       rel='noopener' target='_blank'>
 
-        <img src="mint.png"/>
+        <img src="mint.png" className="full-size-img"/>
         
       </a>
     </HStack>
