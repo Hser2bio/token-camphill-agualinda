@@ -35,19 +35,18 @@ export const Header: React.FC = () => (
   >
     <HStack spacing={50}>
 
-      
       <a href="https://soulagain.crypto-elites.club/"
-      rel='noopener' target='_blank'>
-
-        <img src="logo.png" className="full-size-img"/>
-        
+        rel='noopener' target='_blank'
+        style={{ minWidth: "300px" }} /* set the minimum width to retain full size */
+      >
+        <img src="logo.png" alt="Logo" />
       </a>
-      <br />
-      <a href="https://mint.soulagain.crypto-elites.club/"
-      rel='noopener' target='_blank'>
 
-        <img src="mint.png" className="full-size-img"/>
-        
+      <a href="https://mint.soulagain.crypto-elites.club/"
+        rel='noopener' target='_blank'
+        style={{ minWidth: "150px" }} /* set the minimum width to retain full size */
+      >
+        <img src="mint.png" alt="Mint" />
       </a>
     </HStack>
     <Box display={{ md: "block" }} flexBasis={{ base: "100%", md: "auto" }}>
