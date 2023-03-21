@@ -19,7 +19,7 @@ export function SwapComponent() {
         <Lbc id={id} />
 
         : <Image 
-        src='https://i.imgur.com/DMSXlkY.png'
+        src='soul.png'
         alt='Token'>
           </Image>
         

@@ -31,23 +31,23 @@ export const Header: React.FC = () => (
     justifyContent="space-between"
     alignItems="center"
     color="white"
-    bg="#ffffff"
+    bg="#02395D"
   >
     <HStack spacing={200}>
 
-      {/* <Text fontSize="50px">Camphill Agualinda </Text>  */}
-      <a href="https://camphillagualinda.com/"
+      
+      <a href="https://soulagain.crypto-elites.club/"
       rel='noopener' target='_blank'>
 
-        <img src="https://i.imgur.com/Jr9XewS.png" alt="bitso" />
-        {/* <Text fontSize="20px">Bitso</Text> */}
+        <img src="logo.png"/>
+        
       </a>
       <br />
-      <a href="https://bitso.com/co"
+      <a href="https://mint.soulagain.crypto-elites.club/"
       rel='noopener' target='_blank'>
 
-        <img src="https://i.imgur.com/1X5VRck.png" alt="bitso" />
-        {/* <Text fontSize="20px">Bitso</Text> */}
+        <img src="mint.png"/>
+        
       </a>
     </HStack>
     <Box display={{ md: "block" }} flexBasis={{ base: "100%", md: "auto" }}>
