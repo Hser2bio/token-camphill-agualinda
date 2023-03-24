@@ -1,24 +1,31 @@
+import { MarketplaceProviders , Lbc } from "@strata-foundation/marketplace-ui";
 import { usePublicKey, Swap } from "@strata-foundation/react";
 import { CSSReset, Text, Image } from "@chakra-ui/react";
-import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
-import { MarketplaceProviders } from "@strata-foundation/marketplace-ui";
-import { useRouter } from "next/router";
 import ReactShadow from "react-shadow/emotion";
-import { DarkMode } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+
 
 export function SwapComponent() {
   const router = useRouter();
   const { id: idRaw } = router.query;
+  const id = usePublicKey("FF4WJyQp2AV3Rku5oFotY1aGDYjFqVJpH1785TBekcxH");
+  const { publicKey } = useWallet();
   const { setVisible } = useWalletModal();
-  const id = usePublicKey("BTEUcQsVdZEZEYTptTdYo9m7D8iy4v8iRB1vmWRrdpb");
 
-
-// Shadow div and css reset are not required, but will make sure our styles do not conflict with yours
   return <ReactShadow.div>
     <MarketplaceProviders resetCSS onError={(err) => console.error(err)}>
-      <Swap id={id} />
-    </MarketplaceProviders>
-  </ReactShadow.div>
-} 
+      { publicKey ?
+        <Swap id={id} />
 
+        : <Image 
+        src='soul.png'
+        alt='Token'>
+          </Image>
+        
+          
+      }
+    </MarketplaceProviders>
+    </ReactShadow.div>
+}
