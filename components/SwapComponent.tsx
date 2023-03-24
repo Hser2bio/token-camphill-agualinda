@@ -5,8 +5,18 @@ import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import ReactShadow from "react-shadow/emotion";
 import { useRouter } from "next/router";
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+import styled, { ThemeProvider } from 'styled-components'
 
 
+const Container = styled.div`
+background-color: white; 
+display: flex;
+justify-content: center;
+align-items: center;
+border-style: solid;
+border-color: white;
+border-width: 25px;
+`
 export function SwapComponent() {
   const router = useRouter();
   const { id: idRaw } = router.query;
@@ -14,10 +24,10 @@ export function SwapComponent() {
   const { publicKey } = useWallet();
   const { setVisible } = useWalletModal();
 
-  return <ReactShadow.div>
+  return <div>
     <MarketplaceProviders resetCSS onError={(err) => console.error(err)}>
       { publicKey ?
-        <Swap id={id} />
+        <Container><Swap id={id} /></Container>
 
         : <Image 
         src='soul.png'
@@ -27,5 +37,5 @@ export function SwapComponent() {
           
       }
     </MarketplaceProviders>
-    </ReactShadow.div>
+    </div>
 }
